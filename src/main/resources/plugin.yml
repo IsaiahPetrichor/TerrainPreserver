@@ -1,0 +1,6 @@
+name: TerrainPreserver
+version: '${version}'
+main: org.fallen.terrainpreserver.TerrainPreserver
+api-version: '1.16'
+load: STARTUP
+authors: [Isaiah Petrichor]
