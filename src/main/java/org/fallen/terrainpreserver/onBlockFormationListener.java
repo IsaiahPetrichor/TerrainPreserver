@@ -16,13 +16,16 @@ public class onBlockFormationListener implements Listener {
         ArrayList<Material> excludedBlocks = new ArrayList<>();
         excludedBlocks.add(Material.STONE);
         excludedBlocks.add(Material.OBSIDIAN);
+        excludedBlocks.add(Material.COBBLESTONE);
 
         ArrayList<Material> knownBlocks = new ArrayList<>();
         knownBlocks.add(Material.ICE);
 
+        // Don't cancel formation if the block is excluded
         if (!excludedBlocks.contains(newBlock.getMaterial())) {
+            // If the block is not known then log its formation
             if (!knownBlocks.contains(newBlock.getMaterial())) {
-                System.out.println("New state: " + newBlock.getMaterial());
+                System.out.println("A new block tried to form: " + newBlock.getMaterial());
             }
 
             event.setCancelled(true);
