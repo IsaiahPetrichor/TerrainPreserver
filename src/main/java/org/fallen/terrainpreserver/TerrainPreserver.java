@@ -9,6 +9,7 @@ public final class TerrainPreserver extends JavaPlugin implements Listener {
     public void onEnable() {
         getServer().getPluginManager().registerEvents(new onBlockFormationListener(),  this);
         getServer().getPluginManager().registerEvents(new onBlockSpreadsListener(),  this);
+        getServer().getPluginManager().registerEvents(new onBlockFadesListener(), this);
         getServer().getPluginManager().registerEvents(new onCropGrowthListener(),  this);
     }
 

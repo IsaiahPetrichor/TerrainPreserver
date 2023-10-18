@@ -13,14 +13,38 @@ public class onBlockFadesListener implements Listener {
         Material fadingBlock = e.getBlock().getBlockData().getMaterial();
 
         ArrayList<Material> excludedBlocks = new ArrayList<>();
+        excludedBlocks.add(Material.GRASS_BLOCK);
 
         ArrayList<Material> knownBlocks = new ArrayList<>();
+        knownBlocks.add(Material.ICE);
+        knownBlocks.add(Material.SNOW);
+        knownBlocks.add(Material.BRAIN_CORAL);
+        knownBlocks.add(Material.BRAIN_CORAL_BLOCK);
+        knownBlocks.add(Material.BRAIN_CORAL_FAN);
+        knownBlocks.add(Material.BRAIN_CORAL_WALL_FAN);
+        knownBlocks.add(Material.BUBBLE_CORAL);
+        knownBlocks.add(Material.BUBBLE_CORAL_BLOCK);
+        knownBlocks.add(Material.BUBBLE_CORAL_FAN);
+        knownBlocks.add(Material.BUBBLE_CORAL_WALL_FAN);
+        knownBlocks.add(Material.FIRE_CORAL);
+        knownBlocks.add(Material.FIRE_CORAL_BLOCK);
+        knownBlocks.add(Material.FIRE_CORAL_FAN);
+        knownBlocks.add(Material.FIRE_CORAL_WALL_FAN);
+        knownBlocks.add(Material.HORN_CORAL);
+        knownBlocks.add(Material.HORN_CORAL_BLOCK);
+        knownBlocks.add(Material.HORN_CORAL_FAN);
+        knownBlocks.add(Material.HORN_CORAL_WALL_FAN);
+        knownBlocks.add(Material.TUBE_CORAL);
+        knownBlocks.add(Material.TUBE_CORAL_BLOCK);
+        knownBlocks.add(Material.TUBE_CORAL_FAN);
+        knownBlocks.add(Material.TUBE_CORAL_WALL_FAN);
 
         if (!excludedBlocks.contains(fadingBlock)) {
             if (!knownBlocks.contains(fadingBlock)) {
-                System.out.println("Block tried to spread: " + fadingBlock);
+                System.out.println("Block tried to fade: " + fadingBlock);
             }
-//            e.setCancelled(true);
+
+            e.setCancelled(true);
         }
     }
 }
