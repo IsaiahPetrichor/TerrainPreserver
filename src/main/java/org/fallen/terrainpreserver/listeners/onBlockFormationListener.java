@@ -8,7 +8,7 @@ import org.bukkit.event.block.BlockFormEvent;
 
 import java.util.ArrayList;
 
-import static org.bukkit.Bukkit.getLogger;
+import static org.fallen.terrainpreserver.TerrainPreserver.GlobalLogger;
 
 public class onBlockFormationListener implements Listener {
     @EventHandler
@@ -23,11 +23,11 @@ public class onBlockFormationListener implements Listener {
         ArrayList<Material> knownBlocks = new ArrayList<>();
         knownBlocks.add(Material.ICE);
 
-        // Don't cancel formation if the block is excluded
+        // Cancel formation unless excludedBlocks contains the block
         if (!excludedBlocks.contains(newBlock.getMaterial())) {
-            // If the block is not known then log its formation
+            // If the block is not known then log its formation attempt
             if (!knownBlocks.contains(newBlock.getMaterial())) {
-                getLogger().info("A new block tried to form: " + newBlock.getMaterial());
+                GlobalLogger.info("A new block tried to form: " + newBlock.getMaterial());
             }
 
             event.setCancelled(true);

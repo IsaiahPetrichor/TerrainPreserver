@@ -4,3 +4,7 @@ main: org.fallen.terrainpreserver.TerrainPreserver
 api-version: '1.16'
 load: STARTUP
 authors: [Isaiah Petrichor]
+commands:
+  terp:
+    description: "Master command for Terrain Preserver, try /terp help"
+    usage: "Usage: /terp <sub-command>"

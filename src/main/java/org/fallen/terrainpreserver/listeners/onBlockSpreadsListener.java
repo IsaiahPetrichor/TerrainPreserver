@@ -7,7 +7,7 @@ import org.bukkit.event.block.BlockSpreadEvent;
 
 import java.util.ArrayList;
 
-import static org.bukkit.Bukkit.getLogger;
+import static org.fallen.terrainpreserver.TerrainPreserver.GlobalLogger;
 
 public class onBlockSpreadsListener implements Listener {
     @EventHandler
@@ -22,7 +22,7 @@ public class onBlockSpreadsListener implements Listener {
 
         if (!excludedBlocks.contains(spreadSource)) {
             if (!knownBlocks.contains(spreadSource)) {
-                getLogger().info("Block tried to spread: " + spreadSource);
+                GlobalLogger.info("Block tried to spread: " + spreadSource);
             }
             e.setCancelled(true);
         }
