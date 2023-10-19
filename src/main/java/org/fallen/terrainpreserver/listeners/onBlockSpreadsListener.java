@@ -1,4 +1,4 @@
-package org.fallen.terrainpreserver;
+package org.fallen.terrainpreserver.listeners;
 
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
@@ -6,6 +6,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockSpreadEvent;
 
 import java.util.ArrayList;
+
+import static org.bukkit.Bukkit.getLogger;
 
 public class onBlockSpreadsListener implements Listener {
     @EventHandler
@@ -20,7 +22,7 @@ public class onBlockSpreadsListener implements Listener {
 
         if (!excludedBlocks.contains(spreadSource)) {
             if (!knownBlocks.contains(spreadSource)) {
-                System.out.println("Block tried to spread: " + spreadSource);
+                getLogger().info("Block tried to spread: " + spreadSource);
             }
             e.setCancelled(true);
         }

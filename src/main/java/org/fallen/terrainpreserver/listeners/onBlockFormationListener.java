@@ -1,4 +1,4 @@
-package org.fallen.terrainpreserver;
+package org.fallen.terrainpreserver.listeners;
 
 import org.bukkit.Material;
 import org.bukkit.block.data.BlockData;
@@ -7,6 +7,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockFormEvent;
 
 import java.util.ArrayList;
+
+import static org.bukkit.Bukkit.getLogger;
 
 public class onBlockFormationListener implements Listener {
     @EventHandler
@@ -25,7 +27,7 @@ public class onBlockFormationListener implements Listener {
         if (!excludedBlocks.contains(newBlock.getMaterial())) {
             // If the block is not known then log its formation
             if (!knownBlocks.contains(newBlock.getMaterial())) {
-                System.out.println("A new block tried to form: " + newBlock.getMaterial());
+                getLogger().info("A new block tried to form: " + newBlock.getMaterial());
             }
 
             event.setCancelled(true);

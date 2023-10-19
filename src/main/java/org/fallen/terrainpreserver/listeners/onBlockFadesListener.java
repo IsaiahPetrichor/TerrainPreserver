@@ -1,4 +1,4 @@
-package org.fallen.terrainpreserver;
+package org.fallen.terrainpreserver.listeners;
 
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
@@ -6,6 +6,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockFadeEvent;
 
 import java.util.ArrayList;
+
+import static org.bukkit.Bukkit.getLogger;
 
 public class onBlockFadesListener implements Listener {
     @EventHandler
@@ -41,7 +43,7 @@ public class onBlockFadesListener implements Listener {
 
         if (!excludedBlocks.contains(fadingBlock)) {
             if (!knownBlocks.contains(fadingBlock)) {
-                System.out.println("Block tried to fade: " + fadingBlock);
+                getLogger().info("Block tried to fade: " + fadingBlock);
             }
 
             e.setCancelled(true);
