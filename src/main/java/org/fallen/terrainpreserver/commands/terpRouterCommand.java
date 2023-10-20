@@ -34,11 +34,16 @@ public class terpRouterCommand implements CommandExecutor {
                     GlobalLogger.info(ChatColor.RED + "Invalid sub-command!\n");
                 }
             }
+            String header = ChatColor.WHITE + "" + ChatColor.BOLD + "----------------------------------\n" + ChatColor.AQUA + "" + ChatColor.BOLD + "Available sub-commands:\n";
+            String content = ChatColor.YELLOW + subCommands.toString();
+            String footer = ChatColor.WHITE + "" + ChatColor.BOLD + "\n----------------------------------";
+
+            String info = header + content + footer;
 
             if (sender instanceof Player p) {
-                p.sendMessage(ChatColor.AQUA + "" + ChatColor.BOLD + "Available sub-commands:\n" + ChatColor.YELLOW + subCommands);
+                p.sendMessage(info);
             } else {
-                GlobalLogger.info(ChatColor.AQUA + "" + ChatColor.BOLD + "Available sub-commands:\n" + ChatColor.YELLOW + subCommands);
+                GlobalLogger.info(info);
             }
 
         } else if (args[0].equalsIgnoreCase("crops")) {

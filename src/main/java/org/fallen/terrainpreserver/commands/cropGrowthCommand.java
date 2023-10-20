@@ -12,10 +12,16 @@ import static org.fallen.terrainpreserver.utils.cropList.getIncludedCrops;
 public class cropGrowthCommand {
 
     public static void cropGrowthSettingsCommand(CommandSender sender, Command command, String label, String[] args) {
+        String header = ChatColor.WHITE + "" + ChatColor.BOLD + "----------------------------------\n" + ChatColor.AQUA + "" + ChatColor.BOLD + "Current Crop Growth Settings:\n";
+        String content = ChatColor.AQUA + "Crops that only grow with bonemeal: " + ChatColor.YELLOW + getIncludedCrops() + ChatColor.AQUA + "\nCrops that can always grow: " + ChatColor.YELLOW + getExcludedCrops();
+        String footer = ChatColor.WHITE + "" + ChatColor.BOLD + "\n----------------------------------";
+
+        String info = header + content + footer;
+
         if (sender instanceof Player p) {
-            p.sendMessage(ChatColor.AQUA + "" + ChatColor.BOLD + "Current Crop Growth Settings:\n" + ChatColor.AQUA + "Crops that only grow with bonemeal: " + ChatColor.YELLOW + getIncludedCrops() + ChatColor.AQUA + "\nCrops that can always grow: " + ChatColor.YELLOW + getExcludedCrops());
+            p.sendMessage(info);
         } else {
-            GlobalLogger.info(ChatColor.AQUA + "" + ChatColor.BOLD + "Current Crop Growth Settings:\n" + ChatColor.AQUA + "Crops that only grow with bonemeal: " + ChatColor.YELLOW + getIncludedCrops() + ChatColor.AQUA + "\nCrops that can always grow: " + ChatColor.YELLOW + getExcludedCrops());
+            GlobalLogger.info(info);
         }
     }
 }
