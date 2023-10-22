@@ -9,24 +9,17 @@ import org.bukkit.event.block.BlockFormEvent;
 import java.util.ArrayList;
 
 import static org.fallen.terrainpreserver.TerrainPreserver.GlobalLogger;
+import static org.fallen.terrainpreserver.materiallists.formingBlocksList.*;
 
 public class onBlockFormationListener implements Listener {
     @EventHandler
     public void onBlockFormation(BlockFormEvent event) {
         BlockData newBlock = event.getNewState().getBlockData();
 
-        ArrayList<Material> excludedBlocks = new ArrayList<>();
-        excludedBlocks.add(Material.STONE);
-        excludedBlocks.add(Material.OBSIDIAN);
-        excludedBlocks.add(Material.COBBLESTONE);
-
-        ArrayList<Material> knownBlocks = new ArrayList<>();
-        knownBlocks.add(Material.ICE);
-
-        // Cancel formation unless excludedBlocks contains the block
-        if (!excludedBlocks.contains(newBlock.getMaterial())) {
+        // Cancel formation unless block is excluded
+        if (!getExcludedBlocks().contains(newBlock.getMaterial())) {
             // If the block is not known then log its formation attempt
-            if (!knownBlocks.contains(newBlock.getMaterial())) {
+            if (!getKnownBlocks().contains(newBlock.getMaterial())) {
                 GlobalLogger.info("A new block tried to form: " + newBlock.getMaterial());
             }
 

@@ -6,8 +6,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import static org.fallen.terrainpreserver.TerrainPreserver.GlobalLogger;
-import static org.fallen.terrainpreserver.utils.cropList.getExcludedCrops;
-import static org.fallen.terrainpreserver.utils.cropList.getIncludedCrops;
+import static org.fallen.terrainpreserver.materiallists.cropList.getExcludedCrops;
+import static org.fallen.terrainpreserver.materiallists.cropList.getIncludedCrops;
 
 public class cropGrowthCommand {
 

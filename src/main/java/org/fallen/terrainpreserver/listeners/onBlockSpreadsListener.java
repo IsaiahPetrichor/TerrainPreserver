@@ -5,23 +5,18 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockSpreadEvent;
 
-import java.util.ArrayList;
-
 import static org.fallen.terrainpreserver.TerrainPreserver.GlobalLogger;
+import static org.fallen.terrainpreserver.materiallists.spreadBlocksList.*;
 
 public class onBlockSpreadsListener implements Listener {
     @EventHandler
     public void onBlockSpreads(BlockSpreadEvent e) {
         Material spreadSource = e.getSource().getBlockData().getMaterial();
 
-        ArrayList<Material> excludedBlocks = new ArrayList<>();
-        excludedBlocks.add(Material.GRASS_BLOCK);
-
-        ArrayList<Material> knownBlocks = new ArrayList<>();
-        knownBlocks.add(Material.VINE);
-
-        if (!excludedBlocks.contains(spreadSource)) {
-            if (!knownBlocks.contains(spreadSource)) {
+        // Check if block is excluded because excluded blocks can spread
+        if (!getExcludedBlocks().contains(spreadSource)) {
+            // If block is not known, unknown blocks output logs when they try to spread/grow
+            if (!getKnownBlocks().contains(spreadSource)) {
                 GlobalLogger.info("Block tried to spread: " + spreadSource);
             }
             e.setCancelled(true);

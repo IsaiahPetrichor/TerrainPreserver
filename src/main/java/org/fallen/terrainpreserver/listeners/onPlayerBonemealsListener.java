@@ -10,7 +10,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-import static org.fallen.terrainpreserver.utils.cropList.getIncludedCrops;
+import static org.fallen.terrainpreserver.materiallists.cropList.getIncludedCrops;
 
 public class onPlayerBonemealsListener implements Listener {
     @EventHandler(ignoreCancelled = true)
