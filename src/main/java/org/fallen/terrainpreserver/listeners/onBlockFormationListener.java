@@ -1,15 +1,13 @@
 package org.fallen.terrainpreserver.listeners;
 
-import org.bukkit.Material;
 import org.bukkit.block.data.BlockData;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockFormEvent;
 
-import java.util.ArrayList;
-
 import static org.fallen.terrainpreserver.TerrainPreserver.GlobalLogger;
-import static org.fallen.terrainpreserver.materiallists.formingBlocksList.*;
+import static org.fallen.terrainpreserver.materiallists.formingBlocksList.getExcludedBlocks;
+import static org.fallen.terrainpreserver.materiallists.formingBlocksList.getKnownBlocks;
 
 public class onBlockFormationListener implements Listener {
     @EventHandler

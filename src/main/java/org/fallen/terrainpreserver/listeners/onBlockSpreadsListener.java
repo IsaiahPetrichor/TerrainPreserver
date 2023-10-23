@@ -14,12 +14,13 @@ public class onBlockSpreadsListener implements Listener {
         Material spreadSource = e.getSource().getBlockData().getMaterial();
 
         // Check if block is excluded because excluded blocks can spread
-        if (!getExcludedBlocks().contains(spreadSource)) {
+        if (!getExcludedSpreadableBlocks().contains(spreadSource)) {
             // If block is not known, unknown blocks output logs when they try to spread/grow
-            if (!getKnownBlocks().contains(spreadSource)) {
+            if (!getKnownSpreadableBlocks().contains(spreadSource) && !getIncludedSpreadableBlocks().contains(
+                    spreadSource)) {
                 GlobalLogger.info("Block tried to spread: " + spreadSource);
             }
-            e.setCancelled(true);
+            e.setCancelled(!e.isCancelled());
         }
     }
 }

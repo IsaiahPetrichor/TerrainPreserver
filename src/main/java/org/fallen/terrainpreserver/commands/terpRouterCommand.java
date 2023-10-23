@@ -50,7 +50,6 @@ public class terpRouterCommand implements CommandExecutor {
             cropGrowthSettingsCommand(sender, command, label, args);
         }
 
-
         return true;
     }
 }

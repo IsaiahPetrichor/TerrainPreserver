@@ -5,10 +5,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockFadeEvent;
 
-import java.util.ArrayList;
-
 import static org.fallen.terrainpreserver.TerrainPreserver.GlobalLogger;
-import static org.fallen.terrainpreserver.materiallists.fadingBlockList.*;
+import static org.fallen.terrainpreserver.materiallists.fadingBlockList.getExcludedBlocks;
+import static org.fallen.terrainpreserver.materiallists.fadingBlockList.getKnownBlocks;
 
 public class onBlockFadesListener implements Listener {
     @EventHandler

@@ -6,7 +6,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockGrowEvent;
 
 import static org.fallen.terrainpreserver.TerrainPreserver.GlobalLogger;
-import static org.fallen.terrainpreserver.materiallists.cropList.*;
+import static org.fallen.terrainpreserver.materiallists.cropList.getExcludedCrops;
+import static org.fallen.terrainpreserver.materiallists.cropList.getIncludedCrops;
 
 public class onCropGrowthListener implements Listener {
     @EventHandler

@@ -5,25 +5,33 @@ import org.bukkit.Material;
 import java.util.List;
 
 public class spreadBlocksList {
-    // Known blocks don't output info on spread/grow
-    private static List<Material> knownBlocks = List.of(Material.VINE, Material.TWISTING_VINES, Material.RED_MUSHROOM);
+    // Known blocks don't output info and cannot spread
+    private static List<Material> knownBlocks = List.of(Material.VINE, Material.RED_MUSHROOM);
 
     // Excluded blocks can still spread
     private static List<Material> excludedBlocks = List.of(Material.GRASS_BLOCK);
 
-    public static List<Material> getKnownBlocks() {
+    // Included blocks can be bonemeal-ed
+    private static List<Material> includedBlocks = List.of(
+            Material.BAMBOO, Material.BAMBOO_SAPLING, Material.WEEPING_VINES, Material.TWISTING_VINES, Material.KELP);
+
+    public static List<Material> getKnownSpreadableBlocks() {
         return knownBlocks;
     }
 
-    public static List<Material> getExcludedBlocks() {
+    public static List<Material> getExcludedSpreadableBlocks() {
         return excludedBlocks;
     }
 
-    public static void addKnownBlocks(List<Material> blocks) {
+    public static List<Material> getIncludedSpreadableBlocks() {
+        return includedBlocks;
+    }
+
+    public static void addKnownSpreadableBlocks(List<Material> blocks) {
         knownBlocks.addAll(blocks);
     }
 
-    public static void addExcludedBlocks(List<Material> blocks) {
+    public static void addExcludedSpreadableBlocks(List<Material> blocks) {
         excludedBlocks.addAll(blocks);
     }
 }

@@ -15,10 +15,10 @@ public final class TerrainPreserver extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         // Register Listeners
-        getServer().getPluginManager().registerEvents(new onBlockFormationListener(),  this);
-        getServer().getPluginManager().registerEvents(new onBlockSpreadsListener(),  this);
+        getServer().getPluginManager().registerEvents(new onBlockFormationListener(), this);
+        getServer().getPluginManager().registerEvents(new onBlockSpreadsListener(), this);
         getServer().getPluginManager().registerEvents(new onBlockFadesListener(), this);
-        getServer().getPluginManager().registerEvents(new onCropGrowthListener(),  this);
+        getServer().getPluginManager().registerEvents(new onCropGrowthListener(), this);
         getServer().getPluginManager().registerEvents(new onPlayerBonemealsListener(), this);
 
         // Register Commands
