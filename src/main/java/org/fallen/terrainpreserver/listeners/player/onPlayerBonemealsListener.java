@@ -1,4 +1,4 @@
-package org.fallen.terrainpreserver.listeners;
+package org.fallen.terrainpreserver.listeners.player;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;

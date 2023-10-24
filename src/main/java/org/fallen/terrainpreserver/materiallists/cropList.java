@@ -8,10 +8,10 @@ public class cropList {
     // Included blocks means you can use Bonemeal to grow them.
     private static List<Material> includedCrops = List.of(Material.WHEAT, Material.POTATOES, Material.CARROTS,
                                                           Material.BEETROOTS, Material.MELON_STEM,
-                                                          Material.PUMPKIN_STEM);
+                                                          Material.PUMPKIN_STEM, Material.SUGAR_CANE, Material.CACTUS);
     // Excluded blocks means they can always grow
-    private static List<Material> excludedCrops = List.of(Material.GRASS, Material.CACTUS, Material.SUGAR_CANE,
-                                                          Material.POPPY, Material.DANDELION, Material.ORANGE_TULIP,
+    private static List<Material> excludedCrops = List.of(Material.GRASS, Material.TALL_GRASS, Material.POPPY,
+                                                          Material.DANDELION, Material.ORANGE_TULIP,
                                                           Material.PINK_TULIP, Material.RED_TULIP, Material.WHITE_TULIP,
                                                           Material.BLUE_ORCHID, Material.AZURE_BLUET, Material.ALLIUM,
                                                           Material.OXEYE_DAISY, Material.CORNFLOWER,

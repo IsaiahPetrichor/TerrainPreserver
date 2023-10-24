@@ -1,4 +1,4 @@
-package org.fallen.terrainpreserver.listeners;
+package org.fallen.terrainpreserver.listeners.natural;
 
 import org.bukkit.block.data.BlockData;
 import org.bukkit.event.EventHandler;
@@ -13,6 +13,8 @@ public class onCropGrowthListener implements Listener {
     @EventHandler
     public void onCropsGrow(BlockGrowEvent event) {
         BlockData newCrop = event.getNewState().getBlockData();
+
+        // TODO: beetroots only grow to age:4
 
         // If we don't exclude the block it does not grow.
         if (!getExcludedCrops().contains(newCrop.getMaterial())) {

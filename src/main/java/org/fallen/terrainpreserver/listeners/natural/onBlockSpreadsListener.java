@@ -1,4 +1,4 @@
-package org.fallen.terrainpreserver.listeners;
+package org.fallen.terrainpreserver.listeners.natural;
 
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
