@@ -14,8 +14,6 @@ public class onCropGrowthListener implements Listener {
     public void onCropsGrow(BlockGrowEvent event) {
         BlockData newCrop = event.getNewState().getBlockData();
 
-        // TODO: beetroots only grow to age:4
-
         // If we don't exclude the block it does not grow.
         if (!getExcludedCrops().contains(newCrop.getMaterial())) {
             // If we stop growth but the block is not listed in includedCrops, log it.

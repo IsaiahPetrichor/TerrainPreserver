@@ -18,6 +18,8 @@ import static org.fallen.terrainpreserver.materiallists.spreadBlocksList.getIncl
 public class onPlayerBonemealsListener implements Listener {
     public Player playerInitialized = null;
 
+    // This handles all blocks that are considered crops.
+    // Crops are blocks that grow as a single block, i.e. Wheat.
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onPlayerBonemealsCrop(PlayerInteractEvent event) {
         Player player = event.getPlayer();
@@ -37,8 +39,16 @@ public class onPlayerBonemealsListener implements Listener {
 
             String originalCropAge = String.valueOf(originalBlockData.charAt(originalBlockData.length() - 2));
             int newCropAgeInt = Integer.parseInt(originalCropAge);
-            if (Integer.parseInt(originalCropAge) < 7) {
-                newCropAgeInt += 1;
+            if (blockMaterial == Material.BEETROOTS) {
+                // Beetroots only grow to age 4
+                if (Integer.parseInt(originalCropAge) < 4) {
+                    newCropAgeInt += 1;
+                }
+            } else {
+                // Most crops grow to age 7
+                if (Integer.parseInt(originalCropAge) < 7) {
+                    newCropAgeInt += 1;
+                }
             }
             String newCropAge = String.valueOf(newCropAgeInt);
 
@@ -58,6 +68,8 @@ public class onPlayerBonemealsListener implements Listener {
         }
     }
 
+    // This handles blocks that are not crops, but are spreadable.
+    // Spreadable means they grow but add new blocks to the world, i.e. Sugar Cane.
     @EventHandler(priority = EventPriority.HIGH)
     public void onBlockSpreadsFromBonemeal(BlockSpreadEvent event) {
         if (getIncludedSpreadableBlocks().contains(event.getSource().getType()) && playerInitialized != null) {

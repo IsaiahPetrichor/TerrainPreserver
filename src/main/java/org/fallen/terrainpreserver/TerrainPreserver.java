@@ -16,18 +16,24 @@ public final class TerrainPreserver extends JavaPlugin implements Listener {
     @Override
     public void onEnable() {
         // Register Listeners
+
+        // Block Listeners
         getServer().getPluginManager().registerEvents(new onBlockFormationListener(), this);
         getServer().getPluginManager().registerEvents(new onBlockSpreadsListener(), this);
         getServer().getPluginManager().registerEvents(new onBlockFadesListener(), this);
+        getServer().getPluginManager().registerEvents(new onBlockBurnsListener(), this);
+        // Other Listeners
         getServer().getPluginManager().registerEvents(new onCropGrowthListener(), this);
-        getServer().getPluginManager().registerEvents(new onPlayerBonemealsListener(), this);
         getServer().getPluginManager().registerEvents(new onLeavesFadeListener(), this);
         getServer().getPluginManager().registerEvents(new onWaterBreaksItemListener(), this);
+        getServer().getPluginManager().registerEvents(new onExplosionListener(), this);
+        // Player Listeners
+        getServer().getPluginManager().registerEvents(new onPlayerBonemealsListener(), this);
         getServer().getPluginManager().registerEvents(new onPlayerPlacesBlockListener(), this);
         getServer().getPluginManager().registerEvents(new onPlayerBreaksBlockListener(), this);
         getServer().getPluginManager().registerEvents(new onPlayerDamagedByPlayerListener(), this);
         getServer().getPluginManager().registerEvents(new onPlayerUsesToolSecondaryListener(), this);
-        // TODO: explosions, fire, fall-damage, mob-greifing
+        // TODO: fall-damage, mob-greifing
 
         // Register Commands
         getCommand("terp").setExecutor(new terpRouterCommand());

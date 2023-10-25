@@ -6,7 +6,7 @@ import java.util.List;
 
 public class spreadBlocksList {
     // Known blocks don't output info and cannot spread
-    private static List<Material> knownBlocks = List.of(Material.VINE, Material.RED_MUSHROOM);
+    private static List<Material> knownBlocks = List.of(Material.VINE, Material.RED_MUSHROOM, Material.FIRE);
 
     // Excluded blocks can still spread
     private static List<Material> excludedBlocks = List.of(Material.GRASS_BLOCK);
