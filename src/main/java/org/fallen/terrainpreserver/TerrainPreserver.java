@@ -5,10 +5,7 @@ import org.bukkit.plugin.PluginLogger;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.fallen.terrainpreserver.commands.terpRouterCommand;
 import org.fallen.terrainpreserver.listeners.natural.*;
-import org.fallen.terrainpreserver.listeners.player.onPlayerBonemealsListener;
-import org.fallen.terrainpreserver.listeners.player.onPlayerBreaksBlockListener;
-import org.fallen.terrainpreserver.listeners.player.onPlayerDamagedByPlayerListener;
-import org.fallen.terrainpreserver.listeners.player.onPlayerPlacesBlockListener;
+import org.fallen.terrainpreserver.listeners.player.*;
 
 import java.util.logging.Logger;
 
@@ -29,10 +26,10 @@ public final class TerrainPreserver extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(new onPlayerPlacesBlockListener(), this);
         getServer().getPluginManager().registerEvents(new onPlayerBreaksBlockListener(), this);
         getServer().getPluginManager().registerEvents(new onPlayerDamagedByPlayerListener(), this);
-        // TODO: prevent player using buckets, disable tools secondary (striping logs, tilling land, etc), explosions, fire, fall-damage, mob-greifing
+        getServer().getPluginManager().registerEvents(new onPlayerUsesToolSecondaryListener(), this);
+        // TODO: explosions, fire, fall-damage, mob-greifing
 
         // Register Commands
         getCommand("terp").setExecutor(new terpRouterCommand());
     }
-
 }
