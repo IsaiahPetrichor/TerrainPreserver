@@ -16,9 +16,9 @@ public class fadingBlockList {
                                                         Material.HORN_CORAL_BLOCK, Material.HORN_CORAL_FAN,
                                                         Material.HORN_CORAL_WALL_FAN, Material.TUBE_CORAL,
                                                         Material.TUBE_CORAL_BLOCK, Material.TUBE_CORAL_FAN,
-                                                        Material.TUBE_CORAL_WALL_FAN, Material.FARMLAND);
+                                                        Material.TUBE_CORAL_WALL_FAN, Material.FARMLAND, Material.FIRE);
     // Excluded blocks can still fade
-    private static List<Material> excludedBlocks = List.of(Material.GRASS_BLOCK);
+    private static List<Material> excludedBlocks = List.of(Material.GRASS_BLOCK, Material.MYCELIUM);
 
     public static List<Material> getKnownBlocks() {
         return knownBlocks;

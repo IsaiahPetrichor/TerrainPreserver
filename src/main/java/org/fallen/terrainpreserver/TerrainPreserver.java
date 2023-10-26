@@ -33,7 +33,9 @@ public final class TerrainPreserver extends JavaPlugin implements Listener {
         getServer().getPluginManager().registerEvents(new onPlayerBreaksBlockListener(), this);
         getServer().getPluginManager().registerEvents(new onPlayerDamagedByPlayerListener(), this);
         getServer().getPluginManager().registerEvents(new onPlayerUsesToolSecondaryListener(), this);
-        // TODO: fall-damage, mob-greifing
+        getServer().getPluginManager().registerEvents(new onPlayerWorldDamageListener(), this);
+
+        // TODO: mob-greifing
 
         // Register Commands
         getCommand("terp").setExecutor(new terpRouterCommand());

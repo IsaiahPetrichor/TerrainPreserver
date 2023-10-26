@@ -11,15 +11,16 @@ import static org.fallen.terrainpreserver.materiallists.fadingBlockList.getKnown
 
 public class onBlockFadesListener implements Listener {
     @EventHandler
-    public void onBlockFades(BlockFadeEvent e) {
-        Material fadingBlock = e.getBlock().getBlockData().getMaterial();
+    public void onBlockFades(BlockFadeEvent event) {
+        Material fadingBlock = event.getBlock().getBlockData().getMaterial();
+        String location = "X: " + event.getBlock().getLocation().getBlockX() + ", Y: " + event.getBlock().getLocation().getBlockY() + ", Z: " + event.getBlock().getLocation().getBlockZ();
 
         if (!getExcludedBlocks().contains(fadingBlock)) {
             if (!getKnownBlocks().contains(fadingBlock)) {
-                GlobalLogger.info("Block tried to fade: " + fadingBlock);
+                GlobalLogger.info("Block tried to fade: " + fadingBlock + ", Location: " + location);
             }
 
-            e.setCancelled(true);
+            event.setCancelled(true);
         }
     }
 }
