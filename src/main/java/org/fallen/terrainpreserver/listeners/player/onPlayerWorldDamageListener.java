@@ -13,7 +13,7 @@ public class onPlayerWorldDamageListener implements Listener {
     @EventHandler
     public void onPlayerWorldDamage(EntityDamageEvent event) {
         if (event.getCause() != EntityDamageEvent.DamageCause.SUFFOCATION) {
-            getLogger().info("Cause: " + event.getCause() + ", Entity: " + event.getEntity());
+            getLogger().info("Entity Damaged! Cause: " + event.getCause() + ", Entity: " + event.getEntity());
         }
 
         List<EntityDamageEvent.DamageCause> excludedCauses = List.of(EntityDamageEvent.DamageCause.FALL,

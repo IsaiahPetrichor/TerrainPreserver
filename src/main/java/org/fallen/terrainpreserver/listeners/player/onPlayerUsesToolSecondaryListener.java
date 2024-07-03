@@ -8,6 +8,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 
+import static org.bukkit.Bukkit.getLogger;
+
 public class onPlayerUsesToolSecondaryListener implements Listener {
     @EventHandler
     public void onPlayerUsesToolSecondary(PlayerInteractEvent event) {
@@ -22,6 +24,8 @@ public class onPlayerUsesToolSecondaryListener implements Listener {
         if (block != null && playerRightClicked && itemIsTool) {
             if (!event.getPlayer().isOp()) {
                 event.setCancelled(true);
+            } else {
+                getLogger().info("Block info: " + block.getBlockData());
             }
         }
     }
