@@ -7,6 +7,7 @@ import org.fallen.terrainpreserver.commands.terpRouterCommand;
 import org.fallen.terrainpreserver.listeners.natural.*;
 import org.fallen.terrainpreserver.listeners.player.*;
 
+import java.util.Objects;
 import java.util.logging.Logger;
 
 public final class TerrainPreserver extends JavaPlugin implements Listener {
@@ -38,6 +39,6 @@ public final class TerrainPreserver extends JavaPlugin implements Listener {
         // TODO: mob-greifing
 
         // Register Commands
-        getCommand("terp").setExecutor(new terpRouterCommand());
+        Objects.requireNonNull(getCommand("terp")).setExecutor(new terpRouterCommand());
     }
 }

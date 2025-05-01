@@ -6,16 +6,18 @@ import java.util.List;
 
 public class cropList {
     // Included blocks means you can use Bonemeal to grow them.
-    private static List<Material> includedCrops = List.of(Material.WHEAT, Material.POTATOES, Material.CARROTS,
-                                                          Material.BEETROOTS, Material.MELON_STEM,
-                                                          Material.PUMPKIN_STEM, Material.SUGAR_CANE, Material.CACTUS);
+    private static final List<Material> includedCrops = List.of(Material.WHEAT, Material.COCOA, Material.POTATOES,
+                                                                Material.CARROTS, Material.BEETROOTS,
+                                                                Material.MELON_STEM, Material.PUMPKIN_STEM,
+                                                                Material.SUGAR_CANE, Material.CACTUS);
     // Excluded blocks means they can always grow
-    private static List<Material> excludedCrops = List.of(Material.GRASS, Material.TALL_GRASS, Material.POPPY,
-                                                          Material.DANDELION, Material.ORANGE_TULIP,
-                                                          Material.PINK_TULIP, Material.RED_TULIP, Material.WHITE_TULIP,
-                                                          Material.BLUE_ORCHID, Material.AZURE_BLUET, Material.ALLIUM,
-                                                          Material.OXEYE_DAISY, Material.CORNFLOWER,
-                                                          Material.LILY_OF_THE_VALLEY);
+    private static final List<Material> excludedCrops = List.of(Material.GRASS, Material.TALL_GRASS, Material.POPPY,
+                                                                Material.DANDELION, Material.ORANGE_TULIP,
+                                                                Material.PINK_TULIP, Material.RED_TULIP,
+                                                                Material.WHITE_TULIP, Material.BLUE_ORCHID,
+                                                                Material.AZURE_BLUET, Material.ALLIUM,
+                                                                Material.OXEYE_DAISY, Material.CORNFLOWER,
+                                                                Material.LILY_OF_THE_VALLEY, Material.VINE);
 
     public static List<Material> getIncludedCrops() {
         return includedCrops;
@@ -25,11 +27,11 @@ public class cropList {
         return excludedCrops;
     }
 
-    public static void addIncludedCrops(List<Material> blocks) {
-        includedCrops.addAll(blocks);
-    }
+    //    public static void addIncludedCrops(List<Material> blocks) {
+    //        includedCrops.addAll(blocks);
+    //    }
 
-    public static void addExcludedCrops(List<Material> blocks) {
-        excludedCrops.addAll(blocks);
-    }
+    //    public static void addExcludedCrops(List<Material> blocks) {
+    //        excludedCrops.addAll(blocks);
+    //    }
 }

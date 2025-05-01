@@ -72,7 +72,7 @@ public class onPlayerBonemealsListener implements Listener {
     // Spreadable means they grow but add new blocks to the world, i.e. Sugar Cane.
     @EventHandler(priority = EventPriority.HIGH)
     public void onBlockSpreadsFromBonemeal(BlockSpreadEvent event) {
-        if (getIncludedSpreadableBlocks().contains(event.getSource().getType()) && playerInitialized != null) {
+        if (!getIncludedSpreadableBlocks().contains(event.getSource().getType()) || playerInitialized == null) {
             playerInitialized = null;
             event.setCancelled(true);
         }
